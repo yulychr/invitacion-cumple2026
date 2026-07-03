@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Yuly's Birthday Run 5K — Invitación</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fredoka:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+  :root{
+    --deep:#2E1B52;
+    --purple:#4B2E83;
+    --lilac:#9B7BEF;
+    --lilac-light:#E4D9FC;
+    --pink:#C78BFA;
+    --sun:#E9D8FD;
+    --paper:#FBF8FF;
+    --ink:#3A2260;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:'Fredoka', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .wrap{
+    max-width:720px;
+    margin:0 auto;
+  }
+
+  section{
+    position:relative;
+    padding:64px 32px;
+    overflow:hidden;
+  }
+
+  .eyebrow{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--deep);
+    background: var(--lilac-light);
+    padding:4px 12px;
+    border-radius:16px;
+    margin-bottom:16px;
+  }
+
+  h1,h2{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:800;
+  }
+
+  /* ================= HERO ================= */
+  .hero{
+    background: linear-gradient(165deg, var(--lilac) 0%, var(--purple) 60%, var(--deep) 100%);
+    color:#fff;
+    text-align:center;
+    padding:80px 28px 60px;
+  }
+
+  .hero svg.scene{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:0;
+  }
+
+  .hero-inner{
+    position:relative;
+    z-index:2;
+  }
+
+  .hero-plate{
+    display:inline-block;
+    background: rgba(42,23,80,0.7);
+    border-radius:24px;
+    padding:20px 26px 24px;
+  }
+
+  .hero h1{
+    font-size:40px;
+    line-height:1.02;
+    letter-spacing:0.5px;
+    text-shadow:3px 3px 0 rgba(0,0,0,0.3);
+  }
+  .hero h1 .run{
+    display:block;
+    font-size:52px;
+    line-height:0.95;
+    color: var(--lilac-light);
+    margin-top:4px;
+  }
+
+  .hero .tagline{
+    margin-top:12px;
+    font-size:15px;
+    font-weight:600;
+  }
+
+  .hero .bigdate{
+    margin-top:28px;
+    font-family:'Space Mono', monospace;
+    font-size:13px;
+    letter-spacing:2px;
+    color: var(--lilac-light);
+  }
+
+  .scroll-cue{
+    margin-top:34px;
+    font-size:12px;
+    color: var(--lilac-light);
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-family:'Space Mono', monospace;
+    animation: bob 1.8s ease-in-out infinite;
+  }
+  @keyframes bob{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(6px); }
+  }
+
+  /* ================= WAVE DIVIDER ================= */
+  .wave{
+    display:block;
+    width:100%;
+    height:60px;
+    margin-bottom:-2px;
+  }
+
+  /* ================= SECTION HEADERS ================= */
+  .section-title{
+    font-size:34px;
+    line-height:1;
+    margin-bottom:6px;
+  }
+  .section-title .num{
+    font-family:'Space Mono', monospace;
+    font-size:13px;
+    color:var(--pink);
+    letter-spacing:2px;
+    display:block;
+    margin-bottom:8px;
+  }
+
+  /* ================= INFO SECTION ================= */
+  .info-section{ background: var(--paper); }
+
+  .info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:28px;
+  }
+
+  .info-card{
+    border:2.5px solid var(--ink);
+    border-radius:16px;
+    padding:16px 16px;
+    background:#fff;
+    box-shadow: 3px 3px 0 var(--lilac-light);
+  }
+  .info-card .label{
+    font-family:'Space Mono', monospace;
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--pink);
+    margin-bottom:5px;
+    font-weight:700;
+  }
+  .info-card .value{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    line-height:1.05;
+  }
+  .info-card .value small{
+    display:block;
+    font-family:'Fredoka', sans-serif;
+    font-size:12px;
+    font-weight:500;
+    color:#8A7AB0;
+    margin-top:3px;
+  }
+  .info-card.full{ grid-column: 1/-1; }
+
+  .story{
+    margin-top:22px;
+    font-size:15px;
+    line-height:1.7;
+    background: linear-gradient(90deg,#F1E9FF,#FBF7FF);
+    border-radius:16px;
+    padding:18px 20px;
+  }
+  .story b{ color:var(--pink); }
+
+  /* ================= LUGAR SECTION ================= */
+  .lugar-section{
+    background: var(--deep);
+    color:#fff;
+  }
+  .lugar-section .section-title .num{ color:var(--lilac-light); }
+
+  .place-card{
+    margin-top:26px;
+    border:2.5px solid var(--lilac-light);
+    border-radius:20px;
+    padding:22px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .place-card .name{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:26px;
+    color: var(--lilac-light);
+  }
+  .place-card .addr{
+    margin-top:6px;
+    font-size:14px;
+    color: var(--lilac-light);
+  }
+
+  .place-illustration{
+    margin-top:20px;
+    border-radius:16px;
+    overflow:hidden;
+  }
+
+  .tags-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:18px;
+  }
+  .pill{
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    letter-spacing:1px;
+    padding:6px 12px;
+    border-radius:20px;
+    background: var(--lilac);
+    color:#fff;
+  }
+
+  /* ================= ENCUENTRO SECTION ================= */
+  .encuentro-section{ background: var(--paper); }
+
+  .timeline{
+    margin-top:28px;
+    position:relative;
+    padding-left:26px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:7px;
+    top:6px;
+    bottom:6px;
+    width:3px;
+    background: var(--lilac-light);
+    border-radius:2px;
+  }
+  .tl-item{
+    position:relative;
+    padding-bottom:26px;
+  }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-26px;
+    top:2px;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background: var(--lilac);
+    border:3px solid var(--paper);
+    box-shadow: 0 0 0 2.5px var(--lilac);
+  }
+  .tl-time{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:var(--pink);
+    font-weight:700;
+    letter-spacing:1px;
+  }
+  .tl-label{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    margin-top:2px;
+  }
+  .tl-desc{
+    font-size:13px;
+    color:#8A7AB0;
+    margin-top:2px;
+  }
+
+  .checklist{
+    margin-top:30px;
+    border:2.5px dashed var(--ink);
+    border-radius:16px;
+    padding:18px 20px;
+  }
+  .checklist .label{
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--pink);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  .checklist ul{
+    list-style:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .checklist li{
+    font-size:13.5px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .checklist li::before{
+    content:"✓";
+    color:var(--pink);
+    font-weight:700;
+  }
+
+  /* ================= CROQUIS SECTION ================= */
+  .croquis-section{
+    background: var(--lilac-light);
+  }
+  .croquis-section .section-title .num{ color:var(--pink); }
+
+  .croquis-box{
+    margin-top:26px;
+    border:3px dashed var(--ink);
+    border-radius:20px;
+    background:
+      radial-gradient(circle, #C9B8F2 1px, transparent 1px) 0 0/18px 18px,
+      #FFFDFB;
+    height: 320px;
+    position:relative;
+  }
+  .croquis-box .tag{
+    position:absolute;
+    top:-14px;
+    left:20px;
+    background: var(--lilac);
+    color:#fff;
+    padding:4px 14px;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:13px;
+    border-radius:20px;
+  }
+  .croquis-box .hint{
+    position:absolute;
+    bottom:14px;
+    right:18px;
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    color:#B29FE0;
+  }
+  .croquis-box .corner{
+    position:absolute;
+    width:18px;
+    height:18px;
+    border: 3px solid var(--ink);
+  }
+  .croquis-box .corner.tl{ top:12px; left:12px; border-right:none; border-bottom:none; }
+  .croquis-box .corner.tr{ top:12px; right:12px; border-left:none; border-bottom:none; }
+  .croquis-box .corner.bl{ bottom:12px; left:12px; border-right:none; border-top:none; }
+  .croquis-box .corner.br{ bottom:12px; right:12px; border-left:none; border-top:none; }
+
+  .croquis-box iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    border-radius:16px;
+  }
+
+  .maps-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:16px;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:1px;
+    color:#fff;
+    background: var(--ink);
+    padding:10px 16px;
+    border-radius:20px;
+    text-decoration:none;
+  }
+
+  .legend-row{
+    margin-top:16px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    font-size:12px;
+  }
+  .legend-row span{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .legend-dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    display:inline-block;
+  }
+
+  /* ================= FOOTER / RSVP ================= */
+  .footer-section{
+    background: var(--deep);
+    color:#fff;
+    text-align:center;
+    padding:56px 28px 48px;
+  }
+  .footer-section h2{
+    font-size:30px;
+    color: var(--lilac-light);
+  }
+  .footer-section p{
+    margin-top:10px;
+    font-size:14px;
+    color: var(--lilac-light);
+  }
+  .rsvp-box{
+    display:inline-block;
+    margin-top:22px;
+    background: rgba(255,255,255,0.08);
+    border:2px solid var(--lilac-light);
+    border-radius:16px;
+    padding:16px 26px;
+    font-family:'Space Mono', monospace;
+    font-size:13px;
+    letter-spacing:1px;
+  }
+
+  .dist-badge{
+    position:absolute;
+    top:30px;
+    right:30px;
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    background: var(--lilac);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transform: rotate(6deg);
+    box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+    z-index:2;
+  }
+  .dist-badge .n{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:800;
+    font-size:20px;
+    color:#fff;
+    line-height:0.9;
+  }
+  .dist-badge .k{
+    font-family:'Space Mono', monospace;
+    font-size:8px;
+    color:#fff;
+    letter-spacing:1px;
+  }
+
+  .footer-section .dist-badge{
+    width:130px;
+    height:130px;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.2);
+  }
+  .footer-section .dist-badge .n{
+    font-size:48px;
+  }
+  .footer-section .dist-badge .k{
+    font-size:14px;
+    letter-spacing:2px;
+    margin-top:2px;
+  }
+
+  @media (max-width:480px){
+    section{ padding:48px 20px; }
+    .hero h1{ font-size:32px; }
+    .hero h1 .run{ font-size:40px; }
+    .info-grid{ grid-template-columns:1fr; }
+    .checklist ul{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <svg class="scene" viewBox="0 0 720 520" preserveAspectRatio="xMidYMid slice">
+      <circle cx="600" cy="90" r="60" fill="#E9D8FD" opacity="0.85"/>
+      <g opacity="0.85">
+        <rect x="60" y="60" width="10" height="10" fill="#C78BFA" transform="rotate(20 65 65)"/>
+        <rect x="140" y="120" width="9" height="9" fill="#E9D8FD" transform="rotate(-15 144 124)"/>
+        <circle cx="220" cy="50" r="6" fill="#E4D9FC"/>
+        <rect x="330" y="90" width="9" height="9" fill="#C78BFA" transform="rotate(30 334 94)"/>
+        <circle cx="520" cy="60" r="5" fill="#E9D8FD"/>
+        <rect x="60" y="220" width="9" height="9" fill="#E4D9FC" transform="rotate(10 64 224)"/>
+        <circle cx="660" cy="220" r="6" fill="#C78BFA"/>
+        <rect x="400" y="40" width="8" height="8" fill="#E9D8FD" transform="rotate(-20 404 44)"/>
+      </g>
+      <ellipse cx="90" cy="170" rx="20" ry="26" fill="#C78BFA"/>
+      <line x1="90" y1="196" x2="84" y2="250" stroke="#FBF7FF" stroke-width="2"/>
+      <ellipse cx="640" cy="150" rx="18" ry="24" fill="#E4D9FC"/>
+      <line x1="640" y1="174" x2="646" y2="222" stroke="#FBF7FF" stroke-width="2"/>
+
+      <path d="M0,420 Q180,390 360,420 T720,420 V520 H0 Z" fill="#241340" opacity="0.4"/>
+      <path d="M0,428 Q180,400 360,428 T720,428" fill="none" stroke="#FBF7FF" stroke-width="3" stroke-dasharray="10 10" opacity="0.55"/>
+
+      <g transform="translate(240,340) scale(1.3)" fill="#3A2260">
+        <circle cx="20" cy="-58" r="9"/>
+        <path d="M20,-49 L14,-20 L26,-14 L34,10 L26,14 L16,-8 L4,-2 L-4,20 L-13,16 L-2,-14 L6,-32 L-10,-38 L-8,-48 L14,-46 Z"/>
+      </g>
+      <g transform="translate(380,336) scale(1.55)" fill="#3A2260">
+        <path d="M18,-70 L28,-52 L10,-52 Z" fill="#C78BFA"/>
+        <circle cx="19" cy="-64" r="2.5" fill="#E9D8FD"/>
+        <circle cx="19" cy="-46" r="8.5"/>
+        <path d="M19,-38 L13,-12 L25,-6 L31,18 L23,22 L14,-2 L2,4 L-6,24 L-15,20 L-4,-10 L4,-26 L-11,-32 L-9,-41 L13,-39 Z"/>
+      </g>
+      <g transform="translate(500,344) scale(1.2)" fill="#3A2260">
+        <circle cx="20" cy="-58" r="9"/>
+        <path d="M20,-49 L26,-20 L14,-14 L8,10 L16,14 L24,-8 L36,-2 L42,20 L51,16 L40,-14 L32,-32 L46,-38 L44,-48 L22,-46 Z"/>
+      </g>
+    </svg>
+
+    <div class="hero-inner">
+      <div class="hero-plate">
+        <div class="eyebrow">Edición cumpleaños ✦ 32</div>
+        <h1>YULY'S<span class="run">BIRTHDAY RUN</span></h1>
+        <div class="tagline">5K de pura buena vibra + After 🎉</div>
+      </div>
+      <div class="bigdate">DOMINGO 5 DE JULIO · 7:30 AM · PLAZA DE POCOLLAY</div>
+      <div class="scroll-cue">↓ desliza para ver todo ↓</div>
+    </div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 720 60" preserveAspectRatio="none">
+    <path d="M0,0 L0,30 Q180,60 360,30 T720,30 L720,0 Z" fill="#FBF8FF"/>
+  </svg>
+
+  <!-- ============ 01 INFORMACIÓN ============ -->
+  <section class="info-section">
+    <div class="section-title">
+      <span class="num">01 — LA INFO</span>
+      <h2>¿Qué es esto?</h2>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Fecha</div>
+        <div class="value">Domingo<small>5 de julio</small></div>
+      </div>
+      <div class="info-card">
+        <div class="label">Hora de salida</div>
+        <div class="value">7:30 AM<small>llegar 30 min antes</small></div>
+      </div>
+      <div class="info-card">
+        <div class="label">Distancia</div>
+        <div class="value">5 KM<small>ritmo libre, todos corren su carrera</small></div>
+      </div>
+      <div class="info-card">
+        <div class="label">Después de correr</div>
+        <div class="value">After 🎉<small>seguimos celebrando juntos</small></div>
+      </div>
+    </div>
+
+    <div class="story">
+      El <b>8 de julio</b> estaremos de cumpleaños, pero esta vez lo celebramos distinto:
+      corriendo <b>5 kilómetros</b> con la gente que más nos quiere. No importa si
+      corres, trotas, caminas o andas en bici — lo importante es que estés ahí.
+    </div>
+  </section>
+
+  <!-- ============ 02 LUGAR ============ -->
+  <section class="lugar-section">
+    <div class="section-title">
+      <span class="num">02 — EL LUGAR</span>
+      <h2>¿Dónde es?</h2>
+    </div>
+
+    <div class="place-card">
+      <div class="name">Plaza de Pocollay</div>
+      <div class="addr">Pocollay, Tacna — punto central de salida.</div>
+    </div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 720 60" preserveAspectRatio="none">
+    <path d="M0,0 L0,30 Q180,60 360,30 T720,30 L720,0 Z" fill="#FBF8FF"/>
+  </svg>
+
+  <!-- ============ 03 PUNTO DE ENCUENTRO ============ -->
+  <section class="encuentro-section">
+    <div class="section-title">
+      <span class="num">03 — PUNTO DE ENCUENTRO</span>
+      <h2>El plan del día</h2>
+    </div>
+
+    <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-time">7:00 AM</div>
+      <div class="tl-label">📍 Punto de encuentro</div>
+      <div class="tl-desc">
+        Plaza de Pocollay. Recoge tu dorsal, participa en el calentamiento y nos tomamos una foto antes de la salida.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">7:30 AM</div>
+      <div class="tl-label">🏁 ¡Comienza el Birthday Run!</div>
+      <div class="tl-desc">
+        Salida oficial del recorrido de 5K desde la Plaza de Pocollay.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">~8:30 AM</div>
+      <div class="tl-label">🏅 Meta y fotos</div>
+      <div class="tl-desc">
+        Llegada al Óvalo Callao, entrega de medallas simbólicas y foto grupal.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">9:00 AM</div>
+      <div class="tl-label">🥐 ¡After!</div>
+      <div class="tl-desc">
+        Nos reuniremos en La Lechería (Calle Hipólito Unanue 336) para disfrutar de un desayuno saludable y celebrar juntos.
+      </div>
+    </div>
+  </div>
+
+    <div class="checklist">
+      <div class="label">Qué traer</div>
+      <ul>
+        <li>Zapatillas cómodas</li>
+        <li>Ropa deportiva</li>
+        <li>Botella de agua</li>
+        <li>Muchas ganas de celebrar</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 04 CROQUIS ============ -->
+  <section class="croquis-section">
+    <div class="section-title">
+      <span class="num">04 — LA RUTA</span>
+      <h2>Croquis del recorrido</h2>
+    </div>
+
+    <div class="croquis-box">
+      <div class="tag">🗺️ Ruta oficial</div>
+      <iframe
+        src="https://www.google.com/maps?saddr=-17.9964345,-70.2200012&daddr=-17.9979614,-70.2253829+to:-18.000507,-70.2279988+to:-18.0023187,-70.2313044+to:-18.0186697,-70.2562251+to:-18.0189364,-70.2562958&dirflg=w&output=embed"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <a class="maps-link" href="https://www.google.com/maps/dir/-17.9964345,-70.2200012/-18.0189364,-70.2562958/data=!4m29!4m28!1m25!3m4!1m2!1d-70.2253829!2d-17.9979614!3s0x915ac59d98455e9b:0xa2cd1457cad52d0e!3m4!1m2!1d-70.2279988!2d-18.000507!3s0x915ac59cdb689eaf:0xe3be0ca6bde80685!3m4!1m2!1d-70.2313044!2d-18.0023187!3s0x915ac5837060ce1f:0xba21feed4cf9a25b!3m4!1m2!1d-70.2562251!2d-18.0186697!3s0x915acf69193f2f2b:0xe2001bd85fc78601!3m4!1m2!1d-70.2563719!2d-18.0189779!3s0x915acf691abb2e45:0x32540f823c0ac3e2!1m0!3e2" target="_blank" rel="noopener">
+      📍 ABRIR RUTA EN GOOGLE MAPS (A PIE · 5K)
+    </a>
+
+    <div class="legend-row">
+      <div class="legend-row">
+      <span><span class="legend-dot" style="background:#3121e2"></span>Ruta 5K</span>
+      <span><span class="legend-dot" style="background:#f5f5f5"></span>Salida</span>
+      <span><span class="legend-dot" style="background:#f21515"></span>Meta</span>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER / RSVP ============ -->
+  <section class="footer-section">
+    <div class="dist-badge" style="position:static; display:inline-flex; margin-bottom:18px; transform:rotate(-4deg);">
+      <div class="n">5</div>
+      <div class="k">KM</div>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
